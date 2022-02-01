@@ -2,6 +2,7 @@ const express = require('express')
 const session = require('express-session')
 const fs = require('fs')
 var bodyParser = require('body-parser')
+var port = process.env.PORT || 3005
 
 var app = express()
 var manager = express()
@@ -76,7 +77,7 @@ logWrite.write(logDate.getDate() + "-" + logDate.getMonth()+1 + "-" + logDate.ge
 app.use("/manager", manager)
 app.use('/customer', customer)
 
-app.listen(3005,function(err,result){
+app.listen(port,function(err,result){
     if(err){
         console.log("Error");
         return
