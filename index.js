@@ -36,9 +36,9 @@ app.use(session({
     saveUninitialized: true
 }))
 manager.get("/",function(req,res){
-    res.render("/login")
+    res.render("login")
 })
-manager.post("/managerlogin", function(req, res){
+manager.post("/managepost", function(req, res){
     var name  = req.body.name
     if( req.session.login )
     {
@@ -54,7 +54,7 @@ customer.get("/",function(req,res){
     res.render("loginc")
 })
 
-customer.post("/customerlogin", function(req, res){
+customer.post("/customerpost", function(req, res){
     if( req.session.login )
     {
         var nameC  = req.body.nameC
